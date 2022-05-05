@@ -35,10 +35,3 @@ RUN apt-get install -q -y wget build-essential && \
 
 WORKDIR /opt/${REDIS_ARTIFACT}
 RUN make
-
-
-COPY build.sh /build.sh
-RUN chmod +x /build.sh
-
-# Code file to execute when the docker container starts up
-ENTRYPOINT ["/build.sh"]
