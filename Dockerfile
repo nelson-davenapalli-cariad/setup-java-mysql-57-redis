@@ -3,10 +3,10 @@ FROM ubuntu:18.04
 ENV TERM "dumb"
 
 # Copy scripts into path
-ADD ./start_services.sh /usr/local/bin
-ADD ./stop_services.sh /usr/local/bin
-ADD ./entrypoint.sh /usr/local/bin
-RUN chmod +x -R /usr/local/bin
+ADD ./start_services.sh /start_services.sh
+ADD ./stop_services.sh /stop_services.sh
+ADD ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /start_services.sh /stop_services.sh /entrypoint.sh
 
 # Install Java and mysql
 RUN apt-get update -q -y && \
