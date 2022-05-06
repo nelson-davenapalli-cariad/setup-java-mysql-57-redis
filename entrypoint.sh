@@ -3,6 +3,7 @@
 echo ">>> Starting services .... "
 root_dir=$(pwd)
 /start_services.sh
+mysql -u root -h 127.0.0.1 --protocol tcp -e "create user 'test'@'localhost'; create database test; grant ALL PRIVILEGES ON test.* to  'test'@'localhost';"
 echo ">>> done "
 
 RETURN_CODE=0
