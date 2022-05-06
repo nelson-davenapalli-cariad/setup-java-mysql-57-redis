@@ -1,0 +1,17 @@
+# action.yml
+name: 'run-tests-using-gradle'
+description: 'Run tests with mysql and redis dependency using gradle  '
+inputs:
+  folder:  # path to folder where selenium test tasks are defined by build.gradle
+    description: 'Which folder has the build.gradle'
+    required: true
+  tasks:  # list of tasks
+    description: 'What gradle tasks to run'
+    required: true
+    default: 'testSanity'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.folder}}
+    - ${{ inputs.tasks }}
