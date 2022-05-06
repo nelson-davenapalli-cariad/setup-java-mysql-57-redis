@@ -5,6 +5,7 @@ ENV TERM "dumb"
 # Copy scripts into path
 ADD ./start_services.sh /usr/local/bin
 ADD ./stop_services.sh /usr/local/bin
+ADD ./entrypoint.sh /usr/local/bin
 RUN chmod +x -R /usr/local/bin
 
 # Install Java and mysql
@@ -35,3 +36,5 @@ RUN apt-get install -q -y wget build-essential && \
 
 WORKDIR /opt/${REDIS_ARTIFACT}
 RUN make
+
+ENTRYPOINT [ "/entrypoint.sh" ]
