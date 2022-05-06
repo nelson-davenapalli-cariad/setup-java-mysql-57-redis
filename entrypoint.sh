@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo ">>> Starting services .... "
 root_dir=$(pwd)
 ./start_services.sh
