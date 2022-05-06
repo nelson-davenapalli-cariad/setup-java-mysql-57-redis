@@ -2,7 +2,7 @@
 
 echo ">>> Starting services .... "
 root_dir=$(pwd)
-./start_services.sh
+/start_services.sh
 echo ">>> done "
 
 RETURN_CODE=0
@@ -14,7 +14,7 @@ RETURN_CODE=0
     $2
     echo ">>> Stopping services .... "
     cd $root_dir
-    ./stop_services.sh
+    /stop_services.sh
     echo ">>> done "
 } || { # catch
     RETURN_CODE=1
